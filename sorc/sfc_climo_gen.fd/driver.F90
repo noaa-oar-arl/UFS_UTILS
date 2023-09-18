@@ -162,6 +162,41 @@
    call source_grid_cleanup
  endif
 
+! Canopy forest height
+
+ if (trim(input_canopy_forest_height_file) /= "NULL") then
+   call define_source_grid(localpet, npets, input_canopy_forest_height_file)
+   method=ESMF_REGRIDMETHOD_NEAREST_STOD
+   call interp(localpet, method, input_canopy_forest_height_file)
+   call source_grid_cleanup
+ endif
+
+! Canopy clumping index
+
+ if (trim(input_canopy_clumping_index_file) /= "NULL") then
+   call define_source_grid(localpet, npets, input_canopy_clumping_index_file)
+   method=ESMF_REGRIDMETHOD_NEAREST_STOD
+   call interp(localpet, method, input_canopy_clumping_index_file)
+   call source_grid_cleanup
+ endif
+
+! Canopy leaf area index
+
+ if (trim(input_canopy_leaf_area_index_file) /= "NULL") then
+   call define_source_grid(localpet, npets, input_canopy_leaf_area_index_file)
+   method=ESMF_REGRIDMETHOD_NEAREST_STOD
+   call interp(localpet, method, input_canopy_leaf_area_index_file)
+   call source_grid_cleanup
+ endif
+
+! Canopy forest fraction
+
+ if (trim(input_canopy_forest_fraction_file) /= "NULL") then
+   call define_source_grid(localpet, npets, input_canopy_forest_fraction_file)
+   method=ESMF_REGRIDMETHOD_NEAREST_STOD
+   call interp(localpet, method, input_canopy_forest_fraction_file)
+   call source_grid_cleanup
+ endif
 
 ! Vegetation greenness
 

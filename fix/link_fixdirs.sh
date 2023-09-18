@@ -45,7 +45,9 @@ pwd=$(pwd -P)
 #--model fix fields
 #------------------------------
 if [ $machine = "hera" ]; then
-    FIX_DIR="/scratch1/NCEPDEV/global/glopara/fix"
+#    FIX_DIR="/scratch1/NCEPDEV/global/glopara/fix" 
+    #Just for testing below 
+    FIX_DIR="/scratch2/NAGAPE/arl/Patrick.C.Campbell/UFS/fix"
 elif [ $machine = "jet" ]; then
     FIX_DIR="/lfs4/HFIP/hfv3gfs/glopara/git/fv3gfs/fix"
 elif [ $machine = "orion" ]; then

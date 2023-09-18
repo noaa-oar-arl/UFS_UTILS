@@ -78,6 +78,18 @@
    case ('vegetation_type')
      out_file = "./vegetation_type." // grid_tiles(tile) // ".nc"
      out_file_with_halo = "./vegetation_type." // grid_tiles(tile) // ".halo.nc"
+   case ('canopy_forest_height')
+     out_file = "./canopy_forest_height." // grid_tiles(tile) // ".nc"
+     out_file_with_halo = "./canopy_forest_height." // grid_tiles(tile) // ".halo.nc"
+   case ('canopy_clumping_index')
+     out_file = "./canopy_clumping_index." // grid_tiles(tile) // ".nc"
+     out_file_with_halo = "./canopy_clumping_index." // grid_tiles(tile) //".halo.nc"
+   case ('canopy_leaf_area_index')
+     out_file = "./canopy_leaf_area_index." // grid_tiles(tile) // ".nc"
+     out_file_with_halo = "./canopy_leaf_area_index." // grid_tiles(tile) //".halo.nc"
+   case ('canopy_forest_fraction')
+     out_file = "./canopy_forest_fraction." // grid_tiles(tile) // ".nc"
+     out_file_with_halo = "./canopy_forest_fraction." // grid_tiles(tile) //".halo.nc"
    case default
      print*,'- FATAL ERROR IN ROUTINE OUTPUT.  UNIDENTIFIED FIELD : ', field_names(field_idx)
      call mpi_abort(mpi_comm_world, 67, ierr)

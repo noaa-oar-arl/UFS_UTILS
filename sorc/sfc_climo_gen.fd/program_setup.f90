@@ -30,6 +30,10 @@
  character(len=500), public   :: input_slope_type_file = "NULL" !< File containing input slope type data.
  character(len=500), public   :: input_soil_type_file = "NULL" !< File containing input soil type data.
  character(len=500), public   :: input_soil_color_file = "NULL" !< File containing input soil color data.
+ character(len=500), public   :: input_canopy_forest_height_file = "NULL" !< File containing input canopy forest height data.
+ character(len=500), public   :: input_canopy_clumping_index_file = "NULL" !< File containing input canopy clumping index data.
+ character(len=500), public   :: input_canopy_leaf_area_index_file = "NULL" !< File containing input canopy leaf area index data.
+ character(len=500), public   :: input_canopy_forest_fraction_file = "NULL" !< File containing input canopy forest height data.
  character(len=500), public   :: input_vegetation_type_file = "NULL" !< File containing input vegetation type data.
  character(len=500), public   :: input_vegetation_greenness_file = "NULL" !< File containing input vegetation greenness data.
  character(len=500), public   :: mosaic_file_mdl = "NULL" !< Model grid mosaic file.
@@ -73,6 +77,8 @@
  namelist /config/ input_facsf_file, input_substrate_temperature_file, &
                    input_maximum_snow_albedo_file, input_snowfree_albedo_file, &
                    input_slope_type_file, input_soil_type_file, input_soil_color_file,&
+                   input_canopy_forest_height_file, input_canopy_clumping_index_file,&
+                   input_canopy_leaf_area_index_file, input_canopy_forest_fraction_file,&
                    input_leaf_area_index_file, input_vegetation_type_file, &
                    input_vegetation_greenness_file, mosaic_file_mdl, &
                    orog_dir_mdl, orog_files_mdl, halo, &
