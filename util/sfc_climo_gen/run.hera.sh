@@ -10,14 +10,14 @@
 #------------------------------------------------------------
 
 #SBATCH -J sfc_climo_gen
-#SBATCH -A fv3-cpu
+#SBATCH -A naqfc
 #SBATCH --open-mode=truncate
 #SBATCH -o log
 #SBATCH -e log
 #SBATCH --nodes=1 --ntasks-per-node=24
 #SBATCH --partition=bigmem
-#SBATCH -q debug
-#SBATCH -t 00:10:00
+#SBATCH -q batch
+#SBATCH -t 02:00:00
 
 set -x
 
