@@ -38,14 +38,6 @@ elif [[ -d /scratch1 ]] ; then
     fi
     target=hera
     module purge
-elif [[ -d /glade ]] ; then
-    # We are on NCAR Cheyenne
-    if ( ! eval module help > /dev/null 2>&1 ) ; then
-        echo load the module command 1>&2
-        . /glade/u/apps/ch/opt/lmod/8.1.7/lmod/8.1.7/init/sh
-    fi
-    target=cheyenne
-    module purge
 elif [[ -d /lustre && -d /ncrc ]] ; then
     # We are on GAEA.
     if ( ! eval module help > /dev/null 2>&1 ) ; then
@@ -86,6 +78,9 @@ elif [[ -d /lustre && -d /ncrc ]] ; then
     target=gaea
 elif [[ "$(hostname)" =~ "Orion" ]]; then
     target="orion"
+    module purge
+elif [[ "$(hostname)" =~ "hercules" || "$(hostname)" =~ "Hercules" ]]; then
+    target="hercules"
     module purge
 elif [[ -d /work/00315 && -d /scratch/00315 ]] ; then
     target=stampede

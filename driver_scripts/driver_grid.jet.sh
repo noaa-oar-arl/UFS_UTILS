@@ -104,10 +104,16 @@ export soil_type_src="bnu.v3.30s" # Soil type data.
                                 # 4) "statsgo.nh.30s" for NH 30s data
                                 # 5) "statsgo.30s" for global 30s data
 
+# choose dataset sources for lakefrac & lakedepth so that lake_data_srce=LakeFrac_LakeDepth; 
+# available options are 'MODISP_GLDBV3', 'MODISP_GLOBATHY', 'VIIRS_GLDBV3', 'VIIRS_GLOBATHY' & 'GLDBV3'
+export lake_data_srce=MODISP_GLDBV3 
+
 if [ $gtype = uniform ]; then
   export res=96
-  export add_lake=false        # Add lake frac and depth to orography data.
-  export lake_cutoff=0.20      # lake frac < lake_cutoff ignored when add_lake=T
+  export add_lake=true         # Add lake frac and depth to orography data.
+  export lake_cutoff=0.50      # return 0 if lake_frac <  lake_cutoff & add_lake=T
+  export binary_lake=1         # return 1 if lake_frac >= lake_cutoff & add_lake=T
+  export ocn=${ocn:-"025"}     # use one of  "025", "050", "100", "500". Cannot be empty
 elif [ $gtype = stretch ]; then
   export res=96
   export stretch_fac=1.5       # Stretching factor for the grid
@@ -151,7 +157,6 @@ fi
 export home_dir=$SLURM_SUBMIT_DIR/..
 export TEMP_DIR=/lfs4/HFIP/emcda/$LOGNAME/stmp/fv3_grid.$gtype
 export out_dir=/lfs4/HFIP/emcda/$LOGNAME/stmp/my_grids
-
 #-----------------------------------------------------------------------
 # Should not need to change anything below here.
 #-----------------------------------------------------------------------
