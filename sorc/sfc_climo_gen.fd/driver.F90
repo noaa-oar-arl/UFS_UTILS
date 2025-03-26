@@ -164,10 +164,10 @@
 
 ! Canopy forest height
 
- if (trim(input_canopy_forest_height_file) /= "NULL") then
-   call define_source_grid(localpet, npets, input_canopy_forest_height_file)
+ if (trim(input_canopy_height_file) /= "NULL") then
+   call define_source_grid(localpet, npets, input_canopy_height_file)
    method=ESMF_REGRIDMETHOD_NEAREST_STOD
-   call interp(localpet, method, input_canopy_forest_height_file)
+   call interp(localpet, method, input_canopy_height_file)
    call source_grid_cleanup
  endif
 

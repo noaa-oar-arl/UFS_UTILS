@@ -195,7 +195,7 @@
    if (.not. fract_vegsoil_type) then
      select case (trim(field_names(n)))
        case ('substrate_temperature','vegetation_greenness','leaf_area_index','slope_type','soil_type','soil_color', &
-             'canopy_forest_height','canopy_clumping_index','canopy_leaf_area_index','canopy_forest_fraction')
+             'canopy_height','canopy_clumping_index','canopy_leaf_area_index','canopy_forest_fraction')
        if (localpet == 0) then
          allocate(vegt_mdl_one_tile(i_mdl,j_mdl))
        else
@@ -229,7 +229,7 @@
      if (.not. fract_vegsoil_type) then
        select case (trim(field_names(n)))
          case ('substrate_temperature','vegetation_greenness','leaf_area_index','slope_type','soil_type','soil_color', &
-               'canopy_forest_height','canopy_clumping_index','canopy_leaf_area_index','canopy_forest_fraction')
+               'canopy_height','canopy_clumping_index','canopy_leaf_area_index','canopy_forest_fraction')
            print*,"- CALL FieldGather FOR MODEL GRID VEG TYPE."
            call ESMF_FieldGather(vegt_field_mdl, vegt_mdl_one_tile, rootPet=0, tile=tile, rc=rc)
            if(ESMF_logFoundError(rcToCheck=rc,msg=ESMF_LOGERR_PASSTHRU,line=__LINE__,file=__FILE__)) &
@@ -243,7 +243,7 @@
        if (.not. fract_vegsoil_type) then
          select case (field_names(n))
            case ('substrate_temperature','vegetation_greenness','leaf_area_index','slope_type','soil_type','soil_color', &
-                 'canopy_forest_height','canopy_clumping_index','canopy_leaf_area_index','canopy_forest_fraction')
+                 'canopy_height','canopy_clumping_index','canopy_leaf_area_index','canopy_forest_fraction')
              call adjust_for_landice (data_mdl_one_tile, vegt_mdl_one_tile, i_mdl, j_mdl, field_names(n))
          end select
        endif
@@ -369,7 +369,7 @@
        endif
      enddo
      enddo
-   case ('canopy_forest_height') ! canopy forest height
+   case ('canopy_height') ! canopy forest height
      landice_value = 0.0
      do j = 1, jdim
      do i = 1, idim

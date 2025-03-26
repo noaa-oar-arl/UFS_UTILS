@@ -101,10 +101,10 @@ export vegsoilt_frac=.false.
 #------------------------------------------------------------------------
 
 if [[ "$GRIDTYPE" = "regional" ]]; then
-  mkdir -p $FIX_REG
-  ln -fs $FIX_FV3/C${res}_grid.tile7.halo${HALO}.nc $FIX_REG/C${res}_grid.tile7.halo${HALO}.nc
-  ln -fs $FIX_FV3/C${res}_oro_data.tile7.halo${HALO}.nc $FIX_REG/C${res}_oro_data.tile7.nc
-  ln -fs $FIX_FV3/C${res}_mosaic.halo${HALO}.nc $FIX_REG/C${res}_mosaic.nc
+#  mkdir -p $FIX_REG
+#  ln -fs $FIX_FV3/C${res}_grid.tile7.halo${HALO}.nc $FIX_REG/C${res}_grid.tile7.halo${HALO}.nc
+#  ln -fs $FIX_FV3/C${res}_oro_data.tile7.halo${HALO}.nc $FIX_REG/C${res}_oro_data.tile7.nc
+#  ln -fs $FIX_FV3/C${res}_mosaic.halo${HALO}.nc $FIX_REG/C${res}_mosaic.nc
   export mosaic_file=$FIX_REG/C${res}_mosaic.nc
   export FIX_FV3=$FIX_REG
   #HALO=$(( $HALO + 1 ))

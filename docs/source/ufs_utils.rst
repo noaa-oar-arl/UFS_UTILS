@@ -515,7 +515,7 @@ Program execution is controlled via a namelist.  The namelist variables are:
       * input_soil_color_file - path/name of input soil color data
       * input_vegetation_type_file - path/name of vegetation type data
       * input_vegetation_greenness_file - path/name of monthly vegetation greenness data
-      * input_canopy_forest_height_file - path/name of annual canopy height data
+      * input_canopy_height_file - path/name of annual canopy height data
       * input_canopy_clumping_index_file - path/name of monthly canopy clumping index data
       * input_canopy_leaf_area_index_file - path/name of monthly canopy leaf area index data
       * input_canopy_forest_fraction_file - path/name of monthly canopy forest fraction data
@@ -541,7 +541,7 @@ The surface climatological data is located here `./fix/sfc_climo <https://noaa-n
       * Global 0.05-degree four component monthly snow-free albedo - snowfree_albedo.4comp.0.05.nc
       * Global 1.0-degree categorical slope type - slope_type.1.0.nc
       * Global 0.05-degree CLM soil color (Lawrence and Chase, 2007 JGR) - soil_color.clm.0.05.nc
-      * Global 0.01-degree canopy forest height data
+      * Global 0.01-degree canopy height data
       * Global 0.01-degree canopy clumping index data
       * Global 0.01-degree canopy leaf area index data
       * Global 0.01-degree canopy forest fraction data
@@ -581,7 +581,7 @@ All files with and without halo (all NetCDF).
       * Soil color - CRES_soil_color.tile#.halo#.nc
       * Vegetation type - CRES_vegetation_type.tile#.halo#.nc
       * Vegetation greenness - CRES_vegetation_greenness.tile#.halo#.nc
-      * Canopy forest height - CRES_canopy_forest_height.tile#.halo#.nc
+      * Canopy height - CRES_canopy_height.tile#.halo#.nc
       * Canopy clumping index - CRES_canopy_clumping_index.tile#.halo#.nc
       * Canopy leaf area index - CRES_canopy_leaf_area_index.tile#.halo#.nc
       * Canopy forest fraction - CRES_canopy_forest_fraction.tile#.halo#.nc

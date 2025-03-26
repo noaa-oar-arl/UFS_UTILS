@@ -73,7 +73,7 @@
      default_value = float(2)
    case ('soil_color') ! soil color
      default_value = float(4)
-   case ('canopy_forest_height') ! canopy forest height
+   case ('canopy_height') ! canopy height
      default_value = float(4)
    case ('canopy_clumping_index') ! canopy clumping index
      default_value = float(4)

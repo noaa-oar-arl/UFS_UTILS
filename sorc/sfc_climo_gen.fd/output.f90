@@ -78,9 +78,9 @@
    case ('vegetation_type')
      out_file = "./vegetation_type." // grid_tiles(tile) // ".nc"
      out_file_with_halo = "./vegetation_type." // grid_tiles(tile) // ".halo.nc"
-   case ('canopy_forest_height')
-     out_file = "./canopy_forest_height." // grid_tiles(tile) // ".nc"
-     out_file_with_halo = "./canopy_forest_height." // grid_tiles(tile) // ".halo.nc"
+   case ('canopy_height')
+     out_file = "./canopy_height." // grid_tiles(tile) // ".nc"
+     out_file_with_halo = "./canopy_height." // grid_tiles(tile) // ".halo.nc"
    case ('canopy_clumping_index')
      out_file = "./canopy_clumping_index." // grid_tiles(tile) // ".nc"
      out_file_with_halo = "./canopy_clumping_index." // grid_tiles(tile) //".halo.nc"
