@@ -4,7 +4,7 @@ set(lib_src
 
 set(exe_src gsl_oro_data.f90)
 
-if(CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel)$")
+if(CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel|IntelLLVM)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -r8 -assume byterecl")
 elseif(CMAKE_Fortran_COMPILER_ID MATCHES "^(GNU)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fdefault-real-8 -fno-range-check")
@@ -25,6 +25,10 @@ target_link_libraries(
   orog_gsl_lib
   PUBLIC
   NetCDF::NetCDF_Fortran)
+
+if(OpenMP_Fortran_FOUND)
+  target_link_libraries(orog_gsl_lib PUBLIC OpenMP::OpenMP_Fortran)
+endif()
 
 target_link_libraries(${exe_name} PRIVATE orog_gsl_lib)
 
