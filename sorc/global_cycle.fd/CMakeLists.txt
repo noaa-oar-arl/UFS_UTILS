@@ -6,14 +6,14 @@
 set(lib_src
     machine.f90
     num_parthds.f90
-    ../../ccpp-physics/physics/sfcsub.F
+    ../../ccpp-physics/physics/Interstitials/UFS_SCM_NEPTUNE/sfcsub.F
     read_write_data.f90
     utils.F90
     land_increments.f90)
 
 set(exe_src cycle.f90)
 
-if(CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel)$")
+if(CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel|IntelLLVM)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -r8")
 elseif(CMAKE_Fortran_COMPILER_ID MATCHES "^(GNU)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fdefault-real-8")

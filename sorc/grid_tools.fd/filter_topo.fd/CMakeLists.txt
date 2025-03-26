@@ -4,7 +4,7 @@ set(lib_src
 set(exe_src
     filter_topo.F90)
 
-if(CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel)$")
+if(CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel|IntelLLVM)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -assume byterecl -real-size 64 -fno-alias -stack-temps -safe-cray-ptr -ftz")
 elseif(CMAKE_Fortran_COMPILER_ID MATCHES "^(GNU)$")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -ffree-line-length-0 -fdefault-real-8")
@@ -23,6 +23,10 @@ target_link_libraries(
   filter_topo_lib
   PUBLIC
   NetCDF::NetCDF_Fortran)
+
+if(OpenMP_Fortran_FOUND)
+  target_link_libraries(filter_topo_lib PUBLIC OpenMP::OpenMP_Fortran)
+endif()
 
 target_link_libraries(${exe_name} PRIVATE filter_topo_lib)
 
